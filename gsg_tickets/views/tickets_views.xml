@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="tickets_form_inherit" model="ir.ui.view">
+        <field name="name">ticket.form.inherit</field>
+        <field name="model">helpdesk.ticket</field>
+		<field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+        <field name="arch" type="xml">
+			<field name="assign_ticket_to_self" position="after">
+				<field name="x_state" widget="statusbar" options="{'clickable': '1', 'fold_field': 'fold'}"/>
+			</field>
+			<field name="button_box" position="after">
+				<field name="x_priority" widget="priority" class="mr-3"/>
+			</field>
+			<field name="user_id" position="after">
+				<field name="x_resumen_tarea"/>
+                <field name="x_resumen_solucion"/>
+			</field>
+		</field>
+    </record>
+</odoo>
+
